@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YouTube Panel — Dashboard</title>
+  <link rel="stylesheet" href="stylev2.css">
+  <link rel="icon" href="https://www.youtube.com/s/desktop/37847659/img/favicon_144x144.png">
+</head>
+
+<body data-page="dashboard">
+
+<div id="ytButton">
+  <img src="https://www.youtube.com/s/desktop/37847659/img/favicon_144x144.png">
+</div>
+
+<aside id="sidebar">
+  <div class="sidebar-header">
+    <h1>YouTube</h1>
+    <img class="yt-icon-small" src="https://www.youtube.com/s/desktop/37847659/img/favicon_144x144.png">
+  </div>
+
+  <nav class="sidebar-nav">
+    <a href="dashboard.html" class="nav-link"><button class="nav-btn">Dashboard</button></a>
+    <a href="recent.html" class="nav-link"><button class="nav-btn">Recent</button></a>
+    <a href="videos.html" class="nav-link"><button class="nav-btn">Videos</button></a>
+    <a href="subscribers.html" class="nav-link"><button class="nav-btn">Subscribers</button></a>
+    <a href="settings.html" class="nav-link"><button class="nav-btn">Settings</button></a>
+    <a href="livecount.html" class="nav-link"><button class="nav-btn">Live Count</button></a>
+     <div id="userEmail" class="muted"></div>
+
+
+  </nav>
+</aside>
+
+<main>
+  <div class="panel">
+
+    <h2>Dashboard</h2>
+
+    <div class="yt-grid">
+
+      <div class="yt-card">
+        <h3>Live Subscribers</h3>
+        <div id="subCount" class="big-number">--</div>
+        <div class="muted">Auto-refreshing every 60 seconds</div>
+      </div>
+
+      <div class="yt-card">
+        <h3>Latest Upload</h3>
+        <div class="latest-upload">
+          <img id="latestThumb" class="thumb" src="">
+          <div>
+            <div id="latestTitle" class="video-title">Loading…</div>
+            <div id="latestDate" class="muted"></div>
+            <div id="latestAgo" class="muted"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="yt-card">
+        <h3>Channel Summary</h3>
+        <div id="summaryViews" class="summary-line">Total views: --</div>
+        <div id="summaryVideos" class="summary-line">Total videos: --</div>
+        <div id="summaryCreated" class="summary-line">Channel created: --</div>
+      </div>
+
+      <div class="yt-card">
+        <h3>Latest Subscribers</h3>
+        <ul id="latestSubs" class="subs-list">
+          <li class="muted">OAuth required — coming soon.</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</main>
+
+<script src="yt-dashboardv2.js"></script>
+</body>
+</html>

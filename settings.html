@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YouTube Panel — Settings</title>
+  <link rel="stylesheet" href="stylev2.css">
+  <link rel="icon" href="https://www.youtube.com/s/desktop/37847659/img/favicon_144x144.png">
+</head>
+
+<body data-page="settings">
+
+<div id="ytButton">
+  <img src="https://www.youtube.com/s/desktop/37847659/img/favicon_144x144.png">
+</div>
+
+<aside id="sidebar">
+  <div class="sidebar-header">
+    <h1>YouTube</h1>
+    <img class="yt-icon-small" src="https://www.youtube.com/s/desktop/37847659/img/favicon_144x144.png">
+  </div>
+
+  <nav class="sidebar-nav">
+    <a href="dashboard.html" class="nav-link"><button class="nav-btn">Dashboard</button></a>
+    <a href="recent.html" class="nav-link"><button class="nav-btn">Recent</button></a>
+    <a href="videos.html" class="nav-link"><button class="nav-btn">Videos</button></a>
+    <a href="subscribers.html" class="nav-link"><button class="nav-btn">Subscribers</button></a>
+    <a href="settings.html" class="nav-link"><button class="nav-btn">Settings</button></a>
+    <a href="livecount.html" class="nav-link"><button class="nav-btn">Live Count</button></a>
+     <div id="userEmail" class="muted"></div>
+
+  </nav>
+</aside>
+
+<main>
+  <div class="panel">
+  <h2>Settings</h2>
+
+  <p>The API key and channel ID are hard‑coded in <b>yt-dashboardv2.js</b>.</p>
+  <p>Channel ID: <b>UCX3mH5JteWkLzXfD1CiXSqA</b></p>
+
+  <button id="loginBtn" class="add-one-btn" style="background:#4285F4;">Login with Google</button>
+
+  <p id="loginStatus" style="color:#888; font-size:0.9em;">
+    This is only used to access private subscriber data.You can still use the dashboard without logging in, but the Subscribers page will be empty and show an error in the console.
+</div>
+
+
+
+
+
+  
+</main>
+
+<script src="yt-dashboardv2.js"></script>
+</body>
+</html>

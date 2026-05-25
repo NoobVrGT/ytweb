@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YouTube Panel — Videos</title>
+  <link rel="stylesheet" href="stylev2.css">
+  <link rel="icon" href="https://www.youtube.com/s/desktop/37847659/img/favicon_144x144.png">
+</head>
+
+<body data-page="videos">
+
+<div id="ytButton">
+  <img src="https://www.youtube.com/s/desktop/37847659/img/favicon_144x144.png">
+</div>
+
+<aside id="sidebar">
+  <div class="sidebar-header">
+    <h1>YouTube</h1>
+    <img class="yt-icon-small" src="https://www.youtube.com/s/desktop/37847659/img/favicon_144x144.png">
+  </div>
+
+  <nav class="sidebar-nav">
+    <a href="dashboard.html" class="nav-link"><button class="nav-btn">Dashboard</button></a>
+    <a href="recent.html" class="nav-link"><button class="nav-btn">Recent</button></a>
+    <a href="videos.html" class="nav-link"><button class="nav-btn">Videos</button></a>
+    <a href="subscribers.html" class="nav-link"><button class="nav-btn">Subscribers</button></a>
+    <a href="settings.html" class="nav-link"><button class="nav-btn">Settings</button></a>
+    <a href="livecount.html" class="nav-link"><button class="nav-btn">Live Count</button></a>
+     <div id="userEmail" class="muted"></div>
+
+
+  </nav>
+</aside>
+
+<main>
+  <div class="panel">
+    <h2>All Videos</h2>
+    <div id="videoGrid" class="video-grid"></div>
+  </div>
+</main>
+
+<script src="yt-dashboardv2.js"></script>
+</body>
+</html>

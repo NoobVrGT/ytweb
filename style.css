@@ -1,0 +1,474 @@
+/* ===========================
+   GLOBAL RESET + BASE
+=========================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 18px;
+}
+
+.nav-btn {
+  font-size: 18px;
+  padding: 16px 20px;
+}
+
+.panel {
+  padding: 30px;
+}
+
+
+body {
+  margin: 0;
+  background: #050505;
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.22s ease;
+}
+
+body.fade-in {
+  opacity: 1;
+}
+
+body.fade-out {
+  opacity: 0;
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+
+/* ===========================
+   FLOATING YOUTUBE BUTTON
+=========================== */
+#ytButton {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 75px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.22s ease;
+  z-index: 1000;
+}
+
+#ytButton img {
+  width: 75px;
+  height: 75px;
+}
+
+#ytButton:hover {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+/* ===========================
+   SIDEBAR
+=========================== */
+#sidebar {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform-origin: left center;
+  transform: translateY(-50%) scaleX(0);
+  width: 260px;
+  height: 70%;
+  background: #0d0d0d;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  border-radius: 0 12px 12px 0;
+  padding: 20px;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+  opacity: 0;
+  z-index: 900;
+}
+
+/* Hover to open */
+#ytButton:hover + #sidebar,
+#sidebar:hover {
+  transform: translateY(-50%) scaleX(1);
+  opacity: 1;
+}
+
+/* Sidebar header */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar-header h1 {
+  font-size: 22px;
+  margin: 0;
+}
+
+.yt-icon-small {
+  width: 32px;
+  height: 32px;
+}
+
+/* Sidebar nav */
+.sidebar-nav {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav-btn {
+  background: #1a1a1a;
+  border: none;
+  padding: 12px 14px;
+  border-radius: 10px;
+  color: white;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.nav-btn:hover {
+  background: #2a2a2a;
+  transform: translateX(4px);
+}
+
+/* ===========================
+   MAIN LAYOUT
+=========================== */
+main {
+  width: 100%;
+  height: 100vh;
+  padding: 20px 20px 20px 80px;
+}
+
+.panel {
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 20px;
+  height: calc(100% - 40px);
+  overflow-y: auto;
+}
+
+/* ===========================
+   DASHBOARD CARDS
+=========================== */
+.yt-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.yt-card {
+  background: #111;
+  border-radius: 12px;
+  padding: 18px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.yt-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.big-number {
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.muted {
+  color: rgba(255,255,255,0.6);
+  font-size: 14px;
+}
+
+.summary-line {
+  margin-bottom: 6px;
+}
+
+/* Latest upload */
+.latest-upload {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.thumb {
+  width: 160px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: black;
+}
+
+.video-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* ===========================
+   RECENT PAGE
+=========================== */
+.recent-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.recent-art {
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.recent-title {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.recent-artist {
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+}
+
+.recent-time {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+}
+
+/* ===========================
+   VIDEO GRID
+=========================== */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 26px;
+}
+
+.video-card {
+  background: #111;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.video-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.video-card .video-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+/* ===========================
+   SUBSCRIBERS PAGE
+=========================== */
+.subs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.subs-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+button, .nav-btn {
+  background: #1a1a1a;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .15s ease, transform .15s ease;
+}
+
+button:hover, .nav-btn:hover {
+  background: #2a2a2a;
+  transform: translateX(4px);
+}
+
+
+
+.big-number {
+  font-size: 64px;
+  font-weight: 800;
+}
+
+.yt-card {
+  padding: 26px;
+  font-size: 18px;
+}
+
+.yt-card h3 {
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+
+.latest-upload .video-title {
+  font-size: 20px;
+}
+
+.thumb {
+  width: 220px;
+  height: 124px;
+}
+
+
+/* LIVE COUNTER */
+.live-counter-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sub-number {
+  font-size: 160px;
+  font-weight: 900;
+  color: white;
+  text-shadow: 0 0 25px whitesmoke;
+  transition: 0.3s ease;
+}
+
+.label {
+  font-size: 32px;
+  opacity: 0.7;
+  margin-bottom: 20px;
+}
+
+.milestone-text {
+  margin-top: 20px;
+  font-size: 28px;
+  color: #00ff6a;
+}
+
+/* Milestone glow animation */
+.milestone {
+  animation: glowPulse 1.5s ease-out forwards;
+}
+
+@keyframes glowPulse {
+  0% { text-shadow: 0 0 25px whitesmoke; }
+  50% { text-shadow: 0 0 60px #00ff6a; color: #00ff6a; }
+  100% { text-shadow: 0 0 25px whitesmoke; color: white; }
+}
+
+
+/* ADD ONE BUTTON */
+.add-one-btn {
+  margin-top: 25px;
+  padding: 12px 25px;
+  font-size: 20px;
+  font-weight: bold;
+  background: #1db954;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.add-one-btn:hover {
+  background: #17a84a;
+  transform: scale(1.05);
+}
+
+
+.live-counter-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sub-number {
+  font-size: 160px;
+  font-weight: 900;
+  color: white;
+  text-shadow: 0 0 25px whitesmoke;
+}
+
+.label {
+  font-size: 32px;
+  opacity: 0.7;
+  margin-bottom: 20px;
+}
+
+.milestone-text {
+  margin-top: 20px;
+  font-size: 28px;
+  color: #00ff6a;
+}
+
+/* Green flash on change */
+.sub-number.flash {
+  color: #00ff6a;
+  text-shadow: 0 0 40px #00ff6a;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.add-one-btn {
+  margin-top: 25px;
+  padding: 12px 25px;
+  font-size: 20px;
+  font-weight: bold;
+  background: #1db954;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.add-one-btn:hover {
+  background: #17a84a;
+  transform: scale(1.05);
+}
+
+
+/* Default login button (blue) */
+#loginBtn {
+  background: #4285F4;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Logged-in state (green) */
+#loginBtn.logged-in {
+  background: #34A853 !important;
+}
+
+
+
+
